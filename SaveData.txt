@@ -1,0 +1,2 @@
+0,70.58,1,2,3,4,,,143,0|3,5,1,3,2,5,,mandy,188|0,2,1,3,2,0,,fredrick,14|7,7,1,2,3,4,,,22
+{"player_name":"/name/","x":6,"y":5,"playerx":80,"playery":64,"camerax":0,"cameray":0,"image":[[{},{},{}],[{},{},{}],[{},{},{}],[{},{},{}]],"AnimationProgress":2,"Direction":0,"xCameraMovement":"fixed","yCameraMovement":"free","xMovement":0,"yMovement":0,"inOverworld":true}

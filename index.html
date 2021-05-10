@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" style="margin: 0; padding: 10;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">  
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script type="text/javascript" src="modules/jquery.js"></script>
+    <script src="code/misc.js"></script>
+    <script src="code/battleEngine.js"></script>
+    <script src="code/draw.js"></script>
+    <script src="code/menuHandlers.js"></script>
+    <script src="code/overWorldHandlers.js"></script>
+    <script src="keypresses.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body style="margin: 0; padding: 0; background-color: #111111;" onload="loadSave()" id="body">
+    <center>
+        <canvas
+            style="background-color: black; image-rendering: -moz-crisp-edges; image-rendering: pixelated; image-rendering: crisp-edges;"
+            width="700px" height="500px" id="canvas"></canvas>
+    </center>
+    <div style="max-width: 50px; background-color: white; position: absolute; min-width: 50px; bottom: 50px;left: 2px; text-align: center; visibility: hidden;", id="touch1">
+        <p ontouchend="touchLeft('up')" ontouchstart="touchLeft('down')" style="user-select: none;"><----</p>
+    </div>
+    <div style="max-width: 50px; background-color: white; position: absolute; min-width: 50px; bottom: 50px;left: 52px; text-align: center; visibility: hidden;", id="touch2">
+        <p ontouchend="touchRight('up')" ontouchstart="touchRight('down')" style="user-select: none;">----></p>
+    </div>
+    <div style="max-width: 50px; background-color: white; position: absolute; min-width: 50px; bottom: 0px;left: 27px; text-align: center; visibility: hidden;", id="touch3">
+        <p ontouchend="touchDown('up')" ontouchstart="touchDown('down')" style="user-select: none;">--v--</p>
+    </div>
+    <div style="max-width: 50px; background-color: white; position: absolute; min-width: 50px; bottom: 100px;left: 27px; text-align: center; visibility: hidden;", id="touch4">
+        <p ontouchend="touchUp('up')" ontouchstart="touchUp('down')" style="user-select: none;">--^--</p>
+    </div>
+    <div style="max-width: 50px; background-color: white; position: absolute; min-width: 50px; bottom: 50px;right: 2px; text-align: center; visibility: hidden;", id="touch5">
+        <p ontouchend="touchA('up')" ontouchstart="touchA('down')" style="user-select: none;">--A--</p>
+    </div>
+    <div style="max-width: 50px; background-color: white; position: absolute; min-width: 50px; bottom: 100px;right: 2px; text-align: center; visibility: hidden;", id="touch6">
+        <p ontouchend="touchB('up')" ontouchstart="touchB('down')" style="user-select: none;">--B--</p>
+    </div>
+    <div style="max-width: 50px; background-color: white; position: absolute; min-width: 50px; bottom: 0px;right: 2px; text-align: center; visibility: hidden;", id="touch0">
+        <p ontouchend="touchEnter('up')" ontouchstart="touchEnter('down')" style="user-select: none;">start</p>
+    </div>
+    <button style="position: absolute; top: 0; font-size: large; user-select: none;" onclick="touchMode()">⚙</button>
+
+</body>
+
+</html>

@@ -34,8 +34,7 @@ function menuHandler(){
         if(selectedMenuSlot == 4){
             menu = "none"
             textshowing = true
-            var newSaveData = String(party.join("|"))
-            fs.writeFile('SaveData.txt',newSaveData, function (err) {if (err) return console.log(err);})
+            writeSave()
             onScreenText = ["save was", "succsessfull!"]
             keyX = false
         }
@@ -127,9 +126,11 @@ function menuHandler(){
             while (itemNotFound){
                 if(bagPockets[0][1][i][0] == 4){
                     bagPockets[0][1][i][1] -= 1
+                    if (bagPockets[0][1][i][1] == 0){
+                        bagPockets[0][1].splice(i,1)
+                    }
                     itemNotFound = false
                 }
-                console.log("id: "+bagPockets[0][1][i][0])
                 i ++
             }
             subMenu = "none"

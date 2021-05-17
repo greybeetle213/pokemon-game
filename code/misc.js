@@ -7,7 +7,7 @@ function print(writing,x,y,scale=pixelsize){
         letterx += 5*scale + 0.5*scale
     }
 }
-function Heal(pokemon){
+function Heal(pokemon){ 
     party[pokemon][8] = Math.round((2*pokedex[party[pokemon][0]][1][0]*Math.floor(party[pokemon][1]))/100+Math.floor(party[pokemon][1])+10)
 }
 function loadNPCS(){
@@ -16,6 +16,7 @@ function loadNPCS(){
     while(npcsToLoad >= 0){
         imagesToLoad = 4
         while(imagesToLoad >= 0){
+            map.npcs[npcsToLoad][3][imagesToLoad] = new Image() // when savedata is loaded the images dont load properly so make them images
             map.npcs[npcsToLoad][3][imagesToLoad].onload = function() {console.log("loaded")}
             map.npcs[npcsToLoad][3][imagesToLoad].src =  npcs[map.npcs[npcsToLoad][0]][imagesToLoad]
             imagesToLoad -= 1

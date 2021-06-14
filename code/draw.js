@@ -18,18 +18,16 @@ function draw(){
     if (menu == "main"){
         ctx.beginPath()
         ctx.fillStyle = "#FFFFFF"
-        ctx.fillRect(121*pixelsize, 5*pixelsize,50*pixelsize, 100*pixelsize)
+        ctx.fillRect(121*pixelsize, 5*pixelsize,50*pixelsize, 75*pixelsize)
         ctx.fillStyle = "#000000"
         ctx.lineWidth = String(1*pixelsize)
-        ctx.rect(121*pixelsize, 5*pixelsize,50*pixelsize, 100*pixelsize)
+        ctx.rect(121*pixelsize, 5*pixelsize,50*pixelsize, 75*pixelsize)
         ctx.stroke()
         print("pokemon", 130*pixelsize, 11*pixelsize, pixelsize)
         print("pokedex", 130*pixelsize, 25*pixelsize, pixelsize)
         print("item", 130*pixelsize, 39*pixelsize, pixelsize)
-        print("profile", 130*pixelsize, 53*pixelsize, pixelsize)
-        print("save", 130*pixelsize, 67*pixelsize, pixelsize)
-        print("option", 130*pixelsize, 81*pixelsize, pixelsize)
-        print("exit", 130*pixelsize, 95*pixelsize, pixelsize)
+        print("save", 130*pixelsize, 53*pixelsize, pixelsize)
+        print("exit", 130*pixelsize, 67*pixelsize, pixelsize)
         ctx.drawImage(menuSelecter, 122*pixelsize, 14*selectedMenuSlot*pixelsize+11*pixelsize,7*pixelsize,7*pixelsize)
     }else if ((menu == "item" || menu == "fight" && currentBattleInfo[3] == 1.3) && subMenu != "pkmn"){
         ctx.fillStyle = "#0000FF"

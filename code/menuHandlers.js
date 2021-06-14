@@ -2,7 +2,7 @@ function menuHandler(){
     if (enter == true && player.xMovement == 0 && player.yMovement == 0 && textshowing == false && menu != "fight"){
         if (menu == "none"){ 
             selectedMenuSlot = 0
-            menu = "main" // set the menu to be the one with that lets you chose between pokemon, bag, profile, pokedex, ect.
+            menu = "main" 
         } else if(partySubMenu == false && movingPokemon == -1){
             menu = "none"
             subMenu = "none"
@@ -10,7 +10,7 @@ function menuHandler(){
         }
         enter = false
     }
-    if (down == true && menu == "main" && selectedMenuSlot < 6){
+    if (down == true && menu == "main" && selectedMenuSlot < 4){
         selectedMenuSlot += 1
         down = false
     }
@@ -19,7 +19,7 @@ function menuHandler(){
         up = false
     }
     if (keyX == true && menu == "main"){
-        if (selectedMenuSlot == 6){
+        if (selectedMenuSlot == 4){
             menu = "none"
         }
         if (selectedMenuSlot == 2){
@@ -31,7 +31,7 @@ function menuHandler(){
             keyX = false
             selectedPartySlot = 0
         }
-        if(selectedMenuSlot == 4){
+        if(selectedMenuSlot == 3){
             menu = "none"
             textshowing = true
             writeSave()

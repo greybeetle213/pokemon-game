@@ -116,7 +116,8 @@ function BattleEngineGraphics(){
     if(currentBattleInfo[3] == 1){
         print("fight", 111*pixelsize,canvas.height-29*pixelsize, pixelsize)
         print("pkmn", 147*pixelsize,canvas.height-29*pixelsize, pixelsize)
-        print("run", 111*pixelsize,canvas.height-17*pixelsize, pixelsize)
+        print("ball", 111*pixelsize,canvas.height-17*pixelsize, pixelsize)
+        print("run", 147*pixelsize,canvas.height-17*pixelsize, pixelsize)
         if(selectedMenuSlot == 0){
             ctx.drawImage(menuSelecter,103*pixelsize, canvas.height-29*pixelsize, menuSelecter.width*pixelsize,menuSelecter.height*pixelsize)
         }else if(selectedMenuSlot == 1){
@@ -152,14 +153,14 @@ function BattleEngine(){
         battleAnimationProgress = 0
         encounterPrimed = 0
     }
-	if(right == true && selectedMenuSlot < 2 && (currentBattleInfo[3] == 1 || currentBattleInfo[3] == 1.1)){
+	if(right == true && selectedMenuSlot < 3 && (currentBattleInfo[3] == 1 || currentBattleInfo[3] == 1.1)){
 		selectedMenuSlot += 1
 		right = false
 	}else if(left == true && selectedMenuSlot > 0 && (currentBattleInfo[3] == 1 || currentBattleInfo[3] == 1.1)){
 		selectedMenuSlot -= 1
 		left = false
 	}else if(down == true && selectedMenuSlot < 2 && (currentBattleInfo[3] == 1 || currentBattleInfo[3] == 1.1)){
-		selectedMenuSlot = 2
+		selectedMenuSlot += 2
 	}else if(up == true && selectedMenuSlot > 1 && (currentBattleInfo[3] == 1 || currentBattleInfo[3] == 1.1)){
 		selectedMenuSlot -= 2 
     }
@@ -183,7 +184,7 @@ function BattleEngine(){
                     currentBattleInfo[4] = ["",""]
                     currentBattleInfo[3] = 1.1
                 }
-                if(selectedMenuSlot == 2){
+                if(selectedMenuSlot == 3){
                     if(currentBattleInfo[2][1] > currentBattleInfo[0][1]){
                         currentBattleInfo[3] = 0
                         currentBattleInfo[4] = ["got away safely",""]
@@ -202,11 +203,24 @@ function BattleEngine(){
                     }
                 }
                 if(currentBattleInfo[3] == 1 && selectedMenuSlot == 1){
-                    currentBattleInfo[3] = 1.2
                     keyX = false
                 }
                 if(currentBattleInfo[3] == 1 && selectedMenuSlot == 2){
-                    currentBattleInfo[3] = 1.3
+                    var hasBalls = false
+                    for(i=0;i!=bagPockets[0][1].length;i++){
+                        if(bagPockets[0][1][i][0] == 0){
+                            hasBalls = true
+                        }
+                    }
+                    if(party.length != 6 && hasBalls){
+                        currentBattleInfo[3] = 0
+                        currentBattleInfo[5][3] = 1
+                        miscImage.src = "other_images/pokeball-closed.png"
+                        bagPockets[bagPockets[3]][1][bagPockets[bagPockets[3]][1].length-1-(selectedItem+scrolledInBag)][1] -= 1
+                        if(bagPockets[bagPockets[3]][1][bagPockets[bagPockets[3]][1].length-1-(selectedItem+scrolledInBag)][1] == 0){ // if the count of pokeballs is 0
+                            bagPockets[bagPockets[3]][1].splice(bagPockets[bagPockets[3]][1].length-1-(selectedItem+scrolledInBag)) // remove pokeballs from the bag
+                        }
+                    }                    
                     keyX = false
                 }
             }else if(currentBattleInfo[3] == 1.1 && currentBattleInfo[2][2+selectedMenuSlot] != 0){

@@ -145,7 +145,12 @@ function overWorldHandler(){
             loadTown1()
         }else if(map.colision[player.y][player.x] == 5 && player.yMovement == 0 && map.image == "terrain/Town1.png"){
             returnFromTown1()
+        }else if(map.colision[player.y][player.x] == 6 && player.yMovement == 0 && map.image == "terrain/Town1.png"){
+            loadPokeCenter()
+        }else if(map.colision[player.y][player.x] == 6 && player.yMovement == 0 && map.image == "terrain/pokemon_center.png"){
+            returnFromPokeCenter()
         }
+
     }
     if (keyX == true && textshowing == false && player.xMovement == 0 && player.yMovement == 0){
         if(player.Direction == 1 && typeof map.colision[player.y - 1][player.x] == "string"){

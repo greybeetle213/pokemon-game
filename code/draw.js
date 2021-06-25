@@ -196,6 +196,19 @@ function draw(){
         var moves = [moveDex[party[selectedPartySlot][2]][0], moveDex[party[selectedPartySlot][3]][0], moveDex[party[selectedPartySlot][4]][0], moveDex[party[selectedPartySlot][5]][0]]
         print(moves[0], 7*pixelsize, 97*pixelsize)
         print("pwr "+moveDex[party[selectedPartySlot][2]][1], 7*pixelsize, 107*pixelsize)
+        print(moves[1], 92*pixelsize, 97*pixelsize)
+        if(moves[1] != "....."){
+            print("pwr "+moveDex[party[selectedPartySlot][3]][1], 92*pixelsize, 107*pixelsize)
+        }
+        print(moves[2], 7*pixelsize, 119*pixelsize)
+        if(moves[2] != "....."){
+            print("pwr "+moveDex[party[selectedPartySlot][4]][1], 7*pixelsize, 129*pixelsize)
+        }
+        print(moves[3], 92*pixelsize, 119*pixelsize)
+        if(moves[3] != "....."){
+            print("pwr "+moveDex[party[selectedPartySlot][5]][1], 92*pixelsize, 129*pixelsize)
+        }
+        
         ctx.fillStyle = types[0][moveDex[selectedMenuSlot][6]]
 
     }else if(menu == "fight"){

@@ -203,6 +203,7 @@ function BattleEngine(){
                     }
                 }
                 if(currentBattleInfo[3] == 1 && selectedMenuSlot == 1){
+                    currentBattleInfo[3] = 1.2
                     keyX = false
                 }
                 if(currentBattleInfo[3] == 1 && selectedMenuSlot == 2){
@@ -334,7 +335,7 @@ function BattleEngine(){
                         var ownlvl = Number(currentBattleInfo[2][1])
                         if(ownlvl < 100){
                            //console.log(ownlvl)
-                            Number(currentBattleInfo[2][1]) += ((battleType*150*lvl / 5) * Math.pow(2*lvl+10,2.5) / Math.pow(lvl+ownlvl+10, 2.5)+1)/300
+                            currentBattleInfo[2][1] = Number(currentBattleInfo[2][1]) + ((battleType*150*lvl / 5) * Math.pow(2*lvl+10,2.5) / Math.pow(lvl+ownlvl+10, 2.5)+1)/300
                            //console.log([pokedex[currentBattleInfo[2][0]][0] + " gained ", (((battleType*150*lvl / 5) * Math.pow(2*lvl+10,2.5) / Math.pow(lvl+ownlvl+10, 2.5)+1)/2).toFixed(2)*100+" exp"])
                             if(currentBattleInfo[2][7] == ""){
                                 currentBattleInfo[4] = [pokedex[currentBattleInfo[2][0]][0] + " gained ", (((battleType*150*lvl / 5) * Math.pow(2*lvl+10,2.5) / Math.pow(lvl+ownlvl+10, 2.5)+1)).toFixed(2)*100+" exp"]

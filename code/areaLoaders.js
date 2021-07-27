@@ -159,7 +159,7 @@ function loadPokeCenter(){
     console.log("loadTown1")
     room1.src = "terrain/pokemon_center.png"
     map.image = "terrain/pokemon_center.png"
-    map.npcs = []
+    map.npcs = [[2,128,48,[new Image(),new Image(),new Image(),new Image(),new Image()],8,3,["you turned the","pc on","bleep",""] ]]//0=id in npcs 1=x, 2=y, 3=image,4=collision x, collision y, text
     loadNPCS()
     player.yMovement = -16
 }
@@ -168,20 +168,20 @@ function returnFromPokeCenter(){
     map.width = 576 
     map.height = 256 
     map.startingPos = [-448, -176] //[, -160]
-    player.x = 33
-    player.y = 14
+    player.x = 6
+    player.y = 6
     currentMapPokemon = { levelRange: [10, 15], commonSpawns: [7], uncommonSpawns: [7], rareSpawns: [7], ultraRareSpawns: [0, 3] }
     player.playerx = 80 
     player.playery = 64 
     player.xCameraMovement = "free"
     player.yCameraMovement = "free"
-    player.camerax = 0
-    player.cameray = 0
+    player.camerax = 432
+    player.cameray = 160
     room1.onload = function() {console.log("loaded")}
     console.log("loadTown1")
     room1.src = "terrain/Town1.png"
     map.image = "terrain/Town1.png"
     map.npcs = []
     loadNPCS()
-    player.yMovement = -16
+    player.yMovement = 16
 }

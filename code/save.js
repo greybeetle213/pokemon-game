@@ -22,7 +22,12 @@ function processSave(){
     player = JSON.parse(saveData[1])
     player.image = playerImage
     map = JSON.parse(saveData[2])
-    npcs = [["npcs/npc_mum_1.png", "npcs/npc_mum_0.png", "npcs/npc_mum_1.png", "npcs/npc_mum_2.png", "npcs/npc_mum_3.png"], ["npcs/npc_youngster_3.png", "npcs/npc_youngster_0.png", "npcs/npc_youngster_1.png", "npcs/npc_youngster_2.png", "npcs/npc_youngster_3.png"]]
+    npcs = [
+        ["npcs/npc_mum_1.png", "npcs/npc_mum_0.png", "npcs/npc_mum_1.png", "npcs/npc_mum_2.png", "npcs/npc_mum_3.png"],
+        ["npcs/npc_youngster_3.png", "npcs/npc_youngster_0.png", "npcs/npc_youngster_1.png", "npcs/npc_youngster_2.png", "npcs/npc_youngster_3.png"],
+        ["npcs/pokemon_pc.png","npcs/pokemon_pc.png","npcs/pokemon_pc.png","npcs/pokemon_pc.png"]
+    ]
+
     loadNPCS()
     room1 = new Image()
     room1.src = map.image

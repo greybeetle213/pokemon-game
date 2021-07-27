@@ -159,7 +159,10 @@ function loadPokeCenter(){
     console.log("loadTown1")
     room1.src = "terrain/pokemon_center.png"
     map.image = "terrain/pokemon_center.png"
-    map.npcs = [[2,128,48,[new Image(),new Image(),new Image(),new Image(),new Image()],8,3,["you turned the","pc on","bleep",""] ]]//0=id in npcs 1=x, 2=y, 3=image,4=collision x, collision y, text
+    map.npcs = [
+        [2,128,48,[new Image(),new Image(),new Image(),new Image(),new Image()],8,3,["you turned the","pc on","bleep",""]],
+        [3,80,32,[new Image(),new Image(),new Image(),new Image(),new Image()],5,2,["your pokemon","are now fully", "healed", ""]]
+    ]//0=id in npcs 1=x, 2=y, 3=image,4=collision x, collision y, text
     loadNPCS()
     player.yMovement = -16
 }

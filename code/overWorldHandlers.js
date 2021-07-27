@@ -167,6 +167,9 @@ function overWorldHandler(){
                         if(map.colision[player.y - 1][player.x].substring(4) == "0"){
                             changeCheckPoint = true
                         }
+                        if(map.image == "terrain/pokemon_center.png" && map.colision[player.y-1][player.x].substring(4) == "3"){
+                            changeCheckPoint = true
+                        }
                         break
                     }
                     npcstocheck -= 1
@@ -239,12 +242,15 @@ function overWorldHandler(){
             keyX = false
     }
     if(changeCheckPoint == true){
+        console.log(map.image)
         changeCheckPoint = false
         Object.assign(lastCheckPoint[2], player)
-        console.log("Object.assign(lastCheckPoint[1], map) - map: " + JSON.stringify(map) + " lastCheckPoint[1]: " + JSON.stringify(lastCheckPoint[1]));
         Object.assign(lastCheckPoint[1], map)
-        console.log("Object.assign(lastCheckPoint[1], map) - map: " + JSON.stringify(map) + " lastCheckPoint[1]: " + JSON.stringify(lastCheckPoint[1]));
+        console.log(map.image)
         lastCheckPoint[3] = room1.src
         console.log("checkpoint set")
+        for(i = 0; i < party.length; i ++){
+            Heal(i)
+        }
     }
 }
